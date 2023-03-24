@@ -1,0 +1,40 @@
+name: DemoNewCD
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+  deploy-dev:
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: 'tiago.rodrigues.com'
+    needs: build
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+    
+  deploy-hml:
+    runs-on: ubuntu-latest
+    environment:
+      name: hml
+      url: 'tiago.rodrigues.com'
+    needs: deploy-dev
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+  deploy-prd:
+    runs-on: ubuntu-latest
+    environment:
+      name: hml
+      url: 'tiago.rodrigues.com'
+    needs: deploy-hml
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world!
