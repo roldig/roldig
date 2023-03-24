@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: 'tiago.rodrigues.com'
+      url: 'tiagorodrigues.com'
     needs: build
     steps:
       - name: Run a one-line script
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: hml
-      url: 'tiago.rodrigues.com'
+      url: 'tiagorodrigues.com'
     needs: deploy-dev
     steps:
       - name: Run a one-line script
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: hml
-      url: 'tiago.rodrigues.com'
+      url: 'tiagorodrigues.com'
     needs: deploy-hml
     steps:
       - name: Run a one-line script
